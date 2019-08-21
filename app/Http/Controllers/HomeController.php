@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        SEOMeta::setTitle('Home');
+        SEOMeta::setTitle('Blog of Sebastiaan Nolte');
         SEOMeta::setDescription('Portfolio website of Sebastiaan Nolte');
         $blogPosts = BlogPost::orderby('created_at', 'desc')->paginate(3);
         return view('pages.home', [
