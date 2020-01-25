@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         SEOMeta::setTitle('Blog of Sebastiaan Nolte');
         SEOMeta::setDescription('Portfolio website of Sebastiaan Nolte');
-        $blogPosts = BlogPost::orderby('created_at', 'desc')->paginate(3);
+        $blogPosts = BlogPost::orderby('created_at', 'desc')->paginate(1);
         return view('pages.home', [
             'blogPosts' => $blogPosts
 
