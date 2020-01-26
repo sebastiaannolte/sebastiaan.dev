@@ -1,0 +1,7 @@
+{
+    "Archive": true,
+    "Blog": true,
+    "Projects": true,
+    "Pages": true,
+    "Auth": true
+}

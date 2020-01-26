@@ -19,10 +19,11 @@
                     <td><a href="{{getFullUrl($post->id)}}">{{$post->title}}</a></td>
                     <td>
                         <div class="button-actions">
+                            <a href="/post/edit/{{$post->id}}">
+                                <i class="fa fa-edit"></i>
+                            </a>
                             <a href="/post/delete/{{$post->id}}" class="delete-button">
                                 <i class="fa fa-trash"></i>
-                            </a>
-                            <a href="/post/edit/{{$post->id}}"><i class="fa fa-edit"></i>
                             </a>
                         </div>
                     </td>

@@ -7,7 +7,7 @@
 <div class="content container">
     <div class="page">
         <h1 class="page-title">New Post</h1>
-        <form action="/post/create" method="post">
+        <form action="/post/store" method="post">
             <label for="title">Title</label>
             <input type="text" name="title" placeholder="Title" class="big-textbox" id="title"
                 value="{{ old('title') }}">

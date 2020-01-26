@@ -547,6 +547,14 @@ input[type=checkbox]:checked~.menu-label:after {
     box-shadow: 0px 2px 5px 2px #ccc;
 }
 
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float:right;
+}
+
 /*
    * Copyright (c) Sebastiaan Nolte. Edited by Anish Athalye. Based on poole/hyde by @mdo, which is released
    * under a MIT license. Original license text is included below:

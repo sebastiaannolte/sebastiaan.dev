@@ -7,23 +7,14 @@
         <label class="menu-label" for="menu-icon"></label>
         <div class="trigger">
             <ul class="sidebar-nav">
-                <p class="menu-title-item">>Posts</p>
-                <li class="sidebar-nav-item {{ request()->is('posts') ? 'active' : '' }}">
-                    <a href="/posts">Posts</a>
+                <li class="sidebar-nav-item {{ request()->is('admin/posts') ? 'active' : '' }}">
+                    <a href="/admin/posts">Posts</a>
                 </li>
-                <li class="sidebar-nav-item {{ request()->is('post/new') ? 'active' : '' }}">
-                    <a href="/post/new">New Post</a>
+                <li class="sidebar-nav-item {{ request()->is('admin/projects') ? 'active' : '' }}">
+                    <a href="/admin/projects">Projects</a>
                 </li>
-                <p class="menu-title-item">>Projects</p>
-                <li class="sidebar-nav-item {{ request()->is('project/projects') ? 'active' : '' }}">
-                    <a href="/project/projects">Projects</a>
-                </li>
-                <li class="sidebar-nav-item {{ request()->is('project/new') ? 'active' : '' }}">
-                    <a href="/project/new">New Project</a>
-                </li>
-                <p class="menu-title-item">>Pages</p>
-                <li class="sidebar-nav-item {{ request()->is('pages') ? 'active' : '' }}">
-                    <a href="/pages">Pages</a>
+                <li class="sidebar-nav-item {{ request()->is('admin/pages') ? 'active' : '' }}">
+                    <a href="/admin/pages">Pages</a>
                 </li>
                 <hr class="menu-line">
                 <li class="sidebar-nav-item">

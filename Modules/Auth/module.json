@@ -1,0 +1,15 @@
+{
+    "name": "Auth",
+    "alias": "auth",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Auth\\Providers\\AuthServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "helpers.php"
+    ],
+    "requires": []
+}
