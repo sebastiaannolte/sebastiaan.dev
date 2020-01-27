@@ -7,7 +7,9 @@
 <div class="content container">
     <div class="page">
         <h1 class="page-title">Edit {{$page->title}}</h1>
-        <form action="/page/update/{{ $page->id }}" method="post"">
+        <form action="/admin/page/{{$page->id}}">
+            {{ csrf_field() }}
+            {{ method_field('PUT') }}
             <label for=" title">Title</label>
             <input type="text" name="title" placeholder="Title" class="big-textbox" id="title"
                 value="{{old('title', $page->title)}}">

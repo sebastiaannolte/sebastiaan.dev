@@ -10,15 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/posts/delete/{id}', 'BlogController@destroy')->middleware('auth');
+// Index
 Route::get('/', 'BlogController@index');
+// Post
 Route::get('/{year}/{month}/{day}/{permalink}', 'BlogController@post');
-Route::get('/post/edit/{id}', 'BlogController@edit')->middleware('auth');
-Route::post('/post/update/{id}', 'BlogController@update')->middleware('auth');
+
 Route::prefix('admin')->group(function () {
+    //Admin
+    Route::put('/post/{id}', 'BlogController@update')->middleware('auth');
     Route::get('/posts', 'BlogController@posts')->middleware('auth');
-    Route::get('/posts/new', 'BlogController@new')->middleware('auth');
-    Route::post('/posts/store', 'BlogController@store')->middleware('auth');
-    // Route::delete('/posts/delete/{id}', 'BlogController@destroy')->middleware('auth');
-    // Route::get('/post/edit/{id}', 'BlogController@edit')->middleware('auth');
+    Route::get('/post/edit/{id}', 'BlogController@posts')->middleware('auth');
+    Route::get('/post/new', 'BlogController@new')->middleware('auth');
+    Route::post('/post', 'BlogController@store')->middleware('auth');
+    Route::delete('/post/{id}', 'BlogController@destroy')->middleware('auth');
 });

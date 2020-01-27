@@ -5,7 +5,9 @@
 <div class="content container">
     <div class="page">
         <h1 class="page-title">New Post</h1>
-        <form action="/admin/posts/store" method="post">
+        <form action="/admin/post" method="post">
+            {{ csrf_field() }}
+
             <label for="title">Title</label>
             <input type="text" name="title" placeholder="Title" class="big-textbox" id="title"
                 value="{{ old('title') }}">

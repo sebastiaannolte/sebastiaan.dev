@@ -19,7 +19,7 @@
                     <td><a href="/{{strtolower($page->title)}}">{{$page->title}}</a></td>
                     <td>
                         <div class="button-actions">
-                            <a href="/page/edit/{{$page->id}}"><i class="fa fa-edit"></i></a>
+                            <a href="/admin/page/{{$page->id}}/edit"><i class="fa fa-edit"></i></a>
                         </div>
                     </td>
                 </tr>

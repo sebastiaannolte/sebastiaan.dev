@@ -10,14 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/project/edit/{id}', 'ProjectsController@edit')->middleware('auth');
-Route::post('/project/update/{id}', 'ProjectsController@update')->middleware('auth');
-Route::get('/project/delete/{id}', 'ProjectsController@delete')->middleware('auth');
 
+// Route::resource('admin/project', 'ProjectsController');
 Route::prefix('admin')->group(function () {
-    Route::get('/projects', 'ProjectsController@projects')->middleware('auth');
+    Route::get('projects', 'ProjectsController@projects')->middleware('auth');
+
     Route::get('project/new', 'ProjectsController@new')->middleware('auth');
     Route::post('project', 'ProjectsController@store')->middleware('auth');
+    Route::get('project/{id}/edit', 'ProjectsController@edit')->middleware('auth')->name('project.edit');;
+    // Route::get('project/{id}', 'ProjectsController@edit')->middleware('auth');
+    // Route::get('/project/edit/{id}', 'ProjectsController@edit')->name('project.edit');
+    Route::put('project/{id}', 'ProjectsController@update')->middleware('auth');
+    Route::delete('project/{id}', 'ProjectsController@destroy')->middleware('auth');
 });
 
 Route::prefix('projects')->group(function () {

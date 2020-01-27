@@ -32,6 +32,7 @@ class ProjectsController extends Controller
 
     public function edit($id)
     {
+        dd($id);
         $project = Project::findOrFail($id);
         $blogPost = BlogPost::all()->sortByDesc("id");
 
@@ -40,7 +41,7 @@ class ProjectsController extends Controller
         ]);
     }
 
-    public function new()
+    public function create()
     {
         $blogPosts = BlogPost::all()->sortByDesc("id");
         return view('projects::admin.new', [
@@ -89,7 +90,7 @@ class ProjectsController extends Controller
         return redirect('/admin/projects');
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
         $project = Project::findOrFail($id);
         $project->delete();
