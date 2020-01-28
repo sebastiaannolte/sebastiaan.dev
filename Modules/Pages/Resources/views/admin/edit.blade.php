@@ -7,7 +7,7 @@
 <div class="content container">
     <div class="page">
         <h1 class="page-title">Edit {{$page->title}}</h1>
-        <form action="/admin/page/{{$page->id}}">
+        <form method="POST" action="/admin/page/{{$page->id}}">
             {{ csrf_field() }}
             {{ method_field('PUT') }}
             <label for=" title">Title</label>

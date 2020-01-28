@@ -3,5 +3,6 @@
     "Blog": true,
     "Projects": true,
     "Pages": true,
-    "Auth": true
+    "Auth": true,
+    "Test": true
 }

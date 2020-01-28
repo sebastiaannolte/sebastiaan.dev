@@ -20,7 +20,7 @@
                     <td><a href="{{getFullUrl($post->id)}}">{{$post->title}}</a></td>
                     <td>
                         <div class="button-actions">
-                            <a href="/admin/post/edit/{{$post->id}}">
+                            <a href="/admin/post/{{$post->id}}/edit">
                                 <i class="fa fa-edit"></i>
                             </a>
                             <form method="POST" action="/admin/post/{{$post->id}}">

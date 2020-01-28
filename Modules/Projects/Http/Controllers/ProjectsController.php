@@ -32,7 +32,7 @@ class ProjectsController extends Controller
 
     public function edit($id)
     {
-        dd($id);
+        // dd($id);
         $project = Project::findOrFail($id);
         $blogPost = BlogPost::all()->sortByDesc("id");
 

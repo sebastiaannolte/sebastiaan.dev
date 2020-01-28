@@ -28,7 +28,7 @@ class PagesController extends Controller
         $page = Pages::findOrFail(2);
         SEOMeta::setTitle($page->title);
 
-        return view('pages::index', [
+        return view('pages::admin.index', [
             'page' => $page
         ]);
     }
@@ -65,6 +65,6 @@ class PagesController extends Controller
 
         $page->save();
 
-        return redirect('/pages');
+        return redirect('/admin/pages');
     }
 }

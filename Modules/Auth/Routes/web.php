@@ -11,6 +11,6 @@
 |
 */
 Route::get('/login', 'AuthController@login');
-Route::post('logout', 'Auth\LoginController@logout')->middleware('auth');
+// Route::post('logout', 'Auth\LoginController@logout')->middleware('auth');
 Route::prefix('auth')->group(function () {
 });

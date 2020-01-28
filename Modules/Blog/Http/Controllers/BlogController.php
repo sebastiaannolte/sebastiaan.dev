@@ -76,9 +76,19 @@ class BlogController extends Controller
         return redirect('/admin/posts');
     }
 
+    // public function edit($id)
+    // {
+    //     // dd('yes');
+    //     // dd($id);
+    //     $post = BlogPost::findOrFail($id);
+
+    //     return view('blog::admin.edit', [
+    //         // 'blogPost' => $post
+    //     ]);
+    // }
+
     public function edit($id)
     {
-        // dd($id);
         $post = BlogPost::findOrFail($id);
 
         return view('blog::admin.edit', [
@@ -105,7 +115,7 @@ class BlogController extends Controller
         return redirect('/admin/posts');
     }
 
-    public function new()
+    public function show()
     {
         return view('blog::admin.new');
     }

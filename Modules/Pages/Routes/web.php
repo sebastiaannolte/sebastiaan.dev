@@ -15,13 +15,10 @@
 
 
 Route::get('/about', 'PagesController@about');
-Route::prefix('admin')->group(function () {
+Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function () {
     // Admin homespage
-    // Route::get('/', 'PagesController@admin')->middleware('auth');
+    Route::get('/', 'PagesController@admin')->middleware('auth');
     // // Admin pages
     Route::get('pages', 'PagesController@pages')->middleware('auth');
-
-    // Route::get('/page/{id}/edit', 'PagesController@edit')->middleware('auth');
-    // Route::put('/page/{id}', 'PagesController@update')->middleware('auth');
     Route::resource('page', 'PagesController');
 });

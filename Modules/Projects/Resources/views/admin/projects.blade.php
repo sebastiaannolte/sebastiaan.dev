@@ -21,8 +21,9 @@
                     <td>{{$project->title}}</td>
                     <td>
                         <div class="button-actions">
-                            <a href="{{route('project.edit', ['id', $project->id])}}">
+                            <a href="/admin/project/{{$project->id}}/edit">
                                 <i class="fa fa-edit"></i>
+                            </a>
                             </a>
                             <form method="POST" action="/admin/project/{{$project->id}}">
                                 {{ csrf_field() }}

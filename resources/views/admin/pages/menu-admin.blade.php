@@ -7,6 +7,9 @@
         <label class="menu-label" for="menu-icon"></label>
         <div class="trigger">
             <ul class="sidebar-nav">
+                <li class="sidebar-nav-item {{ request()->is('admin') ? 'active' : '' }}">
+                    <a href="/admin">Home</a>
+                </li>
                 <li class="sidebar-nav-item {{ request()->is('admin/posts') ? 'active' : '' }}">
                     <a href="/admin/posts">Posts</a>
                 </li>
