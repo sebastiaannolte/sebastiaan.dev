@@ -15,7 +15,7 @@ class ProjectsController extends Controller
     public function index()
     {
         SEOMeta::setTitle('Projects');
-        SEOMeta::setDescription('View all the projects made by Sebastiaan Nolte');
+        SEOMeta::setDescription('All the projects made by Sebastiaan Nolte');
         $projects = Project::with('blogPost')->orderby('created_at', 'desc')->paginate(3);
         return view('projects::index', [
             'projects' => $projects

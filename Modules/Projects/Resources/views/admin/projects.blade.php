@@ -7,6 +7,7 @@
     <div class="projects">
         <h1 class="page-title float-left"><a href="/projects">Projects</a></h1>
         <a href="/admin/project/create"><i class="fa fa-plus float-right"></i></a>
+
         </h1>
         <table>
             <thead>
