@@ -151,3 +151,12 @@ figure img {
     display: block;
     color: green;
 }
+
+.delete-button{
+    background-color: transparent;
+    border: transparent;
+    font-size: 20px;
+    color: #0086b3;
+    text-decoration: none;
+    cursor: pointer;
+}

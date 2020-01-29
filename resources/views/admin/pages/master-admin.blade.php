@@ -23,6 +23,7 @@
     <!-- Editor Plugin CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/ui/trumbowyg.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/themes/prism.css">
+    <link rel="stylesheet" href="{{ url('/js/trumbowyg/dist/plugins/highlight/ui/trumbowyg.highlight.min.css') }}" />
 
 
     <!-- Editor Plugin JS -->
@@ -30,13 +31,15 @@
     <script src="{{ url('/js/trumbowyg/dist/plugins/colors/trumbowyg.colors.js') }}"></script>
 
 
-    <script src="{{ url('/js/prism.js') }}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/prism.min.js"></script>
     <script src="{{ url('/js/trumbowyg/dist/plugins/preformatted/trumbowyg.preformatted.js') }}"></script>
 
     <script src="//rawcdn.githack.com/RickStrahl/jquery-resizable/master/dist/jquery-resizable.min.js"></script>
     <script src="{{ url('/js/trumbowyg/dist/plugins/resizimg/trumbowyg.resizimg.js') }}"></script>
     {{-- Custom JS --}}
     <script src="{{ url('/js/custom.js') }}"></script>
+    <script src="{{ url('/js/trumbowyg/dist/plugins/highlight/trumbowyg.highlight.min.js') }}"></script>
+
 </head>
 
 <body>

@@ -28,7 +28,7 @@
                                 {{ method_field('DELETE') }}
 
                                 <div class="form-group">
-                                    <input type="submit" class="delete-button" value="Delete">
+                                    <button class="delete-button"><i class="fa fa-trash"></i></button>
                                 </div>
                             </form>
                         </div>

@@ -50,4 +50,4 @@
 
 
 
-// Auth::routes();
+Auth::routes();
