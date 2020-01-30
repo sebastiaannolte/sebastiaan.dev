@@ -1,6 +1,4 @@
-@extends('admin.pages.master-admin')
-
-@section('title', 'Edit Post '.$blogPost->title)
+@extends('core::layouts.master-admin')
 
 @section('content')
 

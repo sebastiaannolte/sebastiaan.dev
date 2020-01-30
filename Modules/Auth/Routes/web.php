@@ -12,5 +12,9 @@
 */
 Route::get('/login', 'AuthController@login');
 // Route::post('logout', 'Auth\LoginController@logout')->middleware('auth');
-Route::prefix('auth')->group(function () {
+Route::prefix('admin')->group(function () {
+    Route::get('profile', 'AuthController@profile')->middleware('auth');
+    Route::put('profile/{id}', 'AuthController@update')->middleware('auth');
+    Route::get('password/change', 'AuthController@showChangePassword')->middleware('auth');
+    Route::put('/password/change/{id}', 'AuthController@changePassword')->middleware('auth');
 });

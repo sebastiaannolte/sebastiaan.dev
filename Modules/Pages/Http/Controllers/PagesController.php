@@ -35,7 +35,7 @@ class PagesController extends Controller
 
     public function pages()
     {
-        $pages = Pages::all()->sortByDesc("updated_at");
+        $pages = Pages::orderByDesc("updated_at")->paginate(1);
         SEOMeta::setTitle('Pages');
 
         return view('pages::admin.pages', [

@@ -14,10 +14,8 @@
 
         gtag('config', 'UA-100644104-2');
     </script>
-    {{-- <title>@yield('title')</title>
-    <meta name="description" content="Sebastiaan.dev - Blog of Sebastiaan Nolte">
-    <meta name="author" content="Sebastiaan Nolte"> --}}
     {!! SEOMeta::generate() !!}
+
     {{-- Font --}}
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     {{-- Main CSS --}}
@@ -34,7 +32,7 @@
 
 <body>
 
-    @include('menu')
+    @include('core::menu')
     @yield('content')
 
 

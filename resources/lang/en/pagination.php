@@ -15,5 +15,7 @@ return [
 
     'previous' => '&laquo; Newer',
     'next' => 'Older &raquo;',
+    'previous-admin' => 'Next',
+    'next-admin' => 'Prev',
 
 ];

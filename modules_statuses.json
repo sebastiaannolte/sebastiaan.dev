@@ -4,5 +4,6 @@
     "Projects": true,
     "Pages": true,
     "Auth": true,
-    "Test": true
+    "Test": true,
+    "Core": true
 }

@@ -16,7 +16,7 @@ class ProjectsController extends Controller
     {
         SEOMeta::setTitle('Projects');
         SEOMeta::setDescription('All the projects made by Sebastiaan Nolte');
-        $projects = Project::with('blogPost')->orderby('created_at', 'desc')->paginate(3);
+        $projects = Project::with('blogPost')->orderby('created_at', 'desc')->paginate(1);
         return view('projects::index', [
             'projects' => $projects
         ]);
@@ -24,7 +24,8 @@ class ProjectsController extends Controller
 
     public function projects()
     {
-        $projects = Project::all()->sortByDesc("updated_at");
+        SEOMeta::setTitle('Projects');
+        $projects = Project::orderByDesc("updated_at")->paginate(1);
         return view('projects::admin.projects', [
             'projects' => $projects
         ]);
@@ -32,8 +33,8 @@ class ProjectsController extends Controller
 
     public function edit($id)
     {
-        // dd($id);
         $project = Project::findOrFail($id);
+        SEOMeta::setTitle('Edit ' . $project->title);
         $blogPost = BlogPost::all()->sortByDesc("id");
 
         return view('projects::admin.edit', [
@@ -43,6 +44,7 @@ class ProjectsController extends Controller
 
     public function create()
     {
+        SEOMeta::setTitle('New project');
         $blogPosts = BlogPost::all()->sortByDesc("id");
         return view('projects::admin.new', [
             'blogPost' => $blogPosts
@@ -57,6 +59,7 @@ class ProjectsController extends Controller
             'image' => 'required',
             'content' => 'required',
         ]);
+
         $project = new Project();
         $project->title = $request->title;
         $project->blog_post_id = $request->blog_post_id;

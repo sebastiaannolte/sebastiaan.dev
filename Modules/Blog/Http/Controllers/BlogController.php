@@ -26,7 +26,9 @@ class BlogController extends Controller
 
     public function posts()
     {
-        $posts = BlogPost::all()->sortByDesc("updated_at");
+        SEOMeta::setTitle('Posts');
+
+        $posts = BlogPost::orderbyDesc('updated_at')->paginate(1);
         return view('blog::admin/posts', [
             'posts' => $posts
 
@@ -76,20 +78,11 @@ class BlogController extends Controller
         return redirect('/admin/posts');
     }
 
-    // public function edit($id)
-    // {
-    //     // dd('yes');
-    //     // dd($id);
-    //     $post = BlogPost::findOrFail($id);
-
-    //     return view('blog::admin.edit', [
-    //         // 'blogPost' => $post
-    //     ]);
-    // }
-
     public function edit($id)
     {
         $post = BlogPost::findOrFail($id);
+
+        SEOMeta::setTitle('Edit ' . $post->title);
 
         return view('blog::admin.edit', [
             'blogPost' => $post
@@ -117,6 +110,7 @@ class BlogController extends Controller
 
     public function show()
     {
+        SEOMeta::setTitle('New post');
         return view('blog::admin.new');
     }
 }

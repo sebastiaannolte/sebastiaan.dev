@@ -1,6 +1,4 @@
-@extends('master')
-
-@section('title', 'Sebastiaan.dev')
+@extends('core::layouts.master')
 
 @section('content')
 <div class="content container">
@@ -18,7 +16,7 @@
         @endforeach
     </div>
     <div class="pagination">
-        {{$blogPosts->links('blog::pagination')}}
+        {{$blogPosts->links('core::pagination.frontend')}}
     </div>
 </div>
 

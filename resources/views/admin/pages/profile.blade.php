@@ -1,7 +1,5 @@
 @extends('admin.pages.master-admin')
 
-@section('title', 'Profile of '.$user->name)
-
 @section('content')
 <div class="content container">
     <div class="page">
@@ -9,7 +7,9 @@
         @if(session()->has('success'))
         <span class="success_message">{{ session()->get('success') }}</span>
         @endif
-        <form action="/profile/save/{{ $user->id }}" method="post">
+        <form action="/admin/profile/{{ $user->id }}" method="post">
+            {{ csrf_field() }}
+            {{ method_field('PUT') }}
             <label for="name">Name</label>
             <input type="text" name="name" placeholder="Name" class="big-textbox" value="{{old('name', $user->name)}}">
             @error('name')
@@ -21,7 +21,6 @@
             @error('email')
             <span class="error_message">{{ $message }}</span>
             @enderror
-            {{ csrf_field() }}
             <button class="save-btn" type="submit">Save</button>
         </form>
     </div>

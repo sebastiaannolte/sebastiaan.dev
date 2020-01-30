@@ -1,6 +1,4 @@
-@extends('admin.pages.master-admin')
-
-@section('title', 'Pages')
+@extends('core::layouts.master-admin')
 
 @section('content')
 <div class="content container">
@@ -26,6 +24,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{$pages->links('core::pagination.admin')}}
     </div>
 </div>
 
