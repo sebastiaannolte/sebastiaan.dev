@@ -24,7 +24,7 @@
                     <a href="/admin/profile">Profile</a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a href="/logout">Logout</a>
+                    <a href="/admin/logout">Logout</a>
                 </li>
             </ul>
         </div>

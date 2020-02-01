@@ -3,8 +3,10 @@
 @section('content')
 <div class="content container">
     <div class="posts">
-        <h1 class="page-title float-left"><a href="/">Posts</a></h1>
-        <a href="/admin/post/new"><i class="fa fa-plus float-right"></i></a>
+        <div class="page-title-block">
+            <h1 class="page-title float-left"><a href="/">Posts</a></h1>
+            <a class="new-button" href="/admin/post/new"><i class="fa fa-plus float-right"></i></a>
+        </div>
         <table>
             <thead>
                 <tr>

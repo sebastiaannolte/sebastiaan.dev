@@ -16,7 +16,7 @@ class ProjectsController extends Controller
     {
         SEOMeta::setTitle('Projects');
         SEOMeta::setDescription('All the projects made by Sebastiaan Nolte');
-        $projects = Project::with('blogPost')->orderby('created_at', 'desc')->paginate(1);
+        $projects = Project::with('blogPost')->orderby('created_at', 'desc')->paginate(3);
         return view('projects::index', [
             'projects' => $projects
         ]);
@@ -25,7 +25,7 @@ class ProjectsController extends Controller
     public function projects()
     {
         SEOMeta::setTitle('Projects');
-        $projects = Project::orderByDesc("updated_at")->paginate(1);
+        $projects = Project::orderByDesc("updated_at")->paginate(10);
         return view('projects::admin.projects', [
             'projects' => $projects
         ]);
@@ -69,7 +69,8 @@ class ProjectsController extends Controller
 
         $project->save();
 
-        return redirect('/admin/projects');
+        return redirect()->route('admin.projects')
+            ->with('success', 'Project is created');
     }
 
     public function update(Request $request, $id)
@@ -90,13 +91,15 @@ class ProjectsController extends Controller
 
         $project->save();
 
-        return redirect('/admin/projects');
+        return redirect()->route('admin.projects')
+            ->with('success', 'Project is saved');
     }
 
     public function destroy($id)
     {
         $project = Project::findOrFail($id);
         $project->delete();
-        return redirect('/admin/projects');
+        return redirect()->route('admin.projects')
+            ->with('success', 'Project is deleted');
     }
 }

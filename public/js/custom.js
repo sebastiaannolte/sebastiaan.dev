@@ -1,6 +1,7 @@
 $(function () {
     $('#editor').trumbowyg({
         btns: [
+            ['upload'],
             ['viewHTML'],
             ['undo', 'redo'], // Only supported in Blink browsers
             ['formatting'],
@@ -20,7 +21,19 @@ $(function () {
             resizimg: {
                 minSize: 64,
                 step: 2,
+            },
+
+
+            // Add imagur parameters to upload plugin for demo purposes
+            upload: {
+                serverPath: '/image/upload',
+                fileFieldName: 'image',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                urlPropertyName: 'url',
             }
+
         }
 
     });
@@ -35,4 +48,11 @@ $(function () {
     $('.delete-button').on('click', function () {
         return confirm('Are you sure you want to delete this item?');
     });
+
+
+    $('.close').on('click', function () {
+        $(this).parent().remove();
+    });
+
+    $('.alert').delay(5000).fadeOut('slow');
 });

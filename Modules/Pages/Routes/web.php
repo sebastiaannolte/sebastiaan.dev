@@ -17,8 +17,8 @@
 Route::get('/about', 'PagesController@about');
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function () {
     // Admin homespage
-    Route::get('/', 'PagesController@admin')->middleware('auth');
+    Route::get('/', 'PagesController@admin')->name('admin.pages');
     // // Admin pages
-    Route::get('pages', 'PagesController@pages')->middleware('auth');
+    Route::get('pages', 'PagesController@pages');
     Route::resource('page', 'PagesController');
 });

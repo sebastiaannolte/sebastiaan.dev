@@ -35,7 +35,7 @@ class PagesController extends Controller
 
     public function pages()
     {
-        $pages = Pages::orderByDesc("updated_at")->paginate(1);
+        $pages = Pages::orderByDesc("updated_at")->paginate(10);
         SEOMeta::setTitle('Pages');
 
         return view('pages::admin.pages', [
@@ -65,6 +65,7 @@ class PagesController extends Controller
 
         $page->save();
 
-        return redirect('/admin/pages');
+        return redirect()->route('admin.pages')
+            ->with('success', 'Page is saved');
     }
 }

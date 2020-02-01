@@ -33,7 +33,22 @@ class CoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // $dir = 'public/images';
+        // $path = $request->file('image')->store($dir);
+        // $name = str_replace("$dir/", '', $path);
+        $file = $request->file('image');
+        $extension = $file->getClientOriginalExtension(); // getting image extension
+        $filename = time() . '.' . $extension;
+        $file->move('img/', $filename);
+
+
+        $response = [
+            'success' => true,
+            'url' => asset("img/" . $filename)
+        ];
+
+        return response()->json($response);
     }
 
     /**

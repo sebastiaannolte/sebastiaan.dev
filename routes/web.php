@@ -47,7 +47,3 @@
 // Route::post('/profile/save/{id}', 'AdminController@saveProfile')->middleware('auth');
 // Route::get('/password/change', 'AdminController@showChangePassword')->middleware('auth');
 // Route::post('/password/change/{id}', 'AdminController@changePassword')->middleware('auth');
-
-
-
-Auth::routes();

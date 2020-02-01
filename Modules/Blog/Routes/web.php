@@ -23,6 +23,6 @@ Route::get('/{year}/{month}/{day}/{permalink}', 'BlogController@post')->where([
 
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function () {
     //Admin
-    Route::get('/posts', 'BlogController@posts');
+    Route::get('/posts', 'BlogController@posts')->name('admin.posts');
     Route::resource('post', 'BlogController');
 });

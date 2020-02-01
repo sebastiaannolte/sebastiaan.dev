@@ -28,7 +28,7 @@ class BlogController extends Controller
     {
         SEOMeta::setTitle('Posts');
 
-        $posts = BlogPost::orderbyDesc('updated_at')->paginate(1);
+        $posts = BlogPost::orderbyDesc('updated_at')->paginate(10);
         return view('blog::admin/posts', [
             'posts' => $posts
 
@@ -46,7 +46,7 @@ class BlogController extends Controller
             //TODO: Set custom 404
             abort(404, 'Not Found');
         }
-        $top3 = BlogPost::orderBy('created_at', 'desc')->take(3)->get();
+        $top3 = BlogPost::orderByDesc('created_at')->take(3)->get();
         return view('blog::post', [
             'blogPost' => $blogPost, 'top3' => $top3
         ]);
@@ -67,7 +67,9 @@ class BlogController extends Controller
         $blogPost->content = base64_encode($request->content);
         $blogPost->permalink = $request->permalink;
         $blogPost->save();
-        return redirect('/admin/posts');
+
+        return redirect()->route('admin.posts')
+            ->with('success', 'Post is created');
     }
     public function destroy($id)
     {
@@ -75,7 +77,8 @@ class BlogController extends Controller
 
         $post->delete();
 
-        return redirect('/admin/posts');
+        return redirect()->route('admin.posts')
+            ->with('success', 'Post is deleted');
     }
 
     public function edit($id)
@@ -105,7 +108,8 @@ class BlogController extends Controller
 
         $blogPost->save();
 
-        return redirect('/admin/posts');
+        return redirect()->route('admin.posts')
+            ->with('success', 'Post is saved');
     }
 
     public function show()

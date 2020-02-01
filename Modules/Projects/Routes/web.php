@@ -13,7 +13,7 @@
 
 // Route::resource('admin/project', 'ProjectsController');
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function () {
-    Route::get('projects', 'ProjectsController@projects')->middleware('auth');
+    Route::get('projects', 'ProjectsController@projects')->name('admin.projects');;
     Route::resource('project', 'ProjectsController');
 });
 
