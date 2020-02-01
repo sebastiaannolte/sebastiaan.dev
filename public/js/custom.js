@@ -1,7 +1,6 @@
 $(function () {
     $('#editor').trumbowyg({
         btns: [
-            ['upload'],
             ['viewHTML'],
             ['undo', 'redo'], // Only supported in Blink browsers
             ['formatting'],
@@ -15,6 +14,7 @@ $(function () {
             ['removeformat'],
             ['foreColor', 'backColor'],
             ['highlight'],
+            ['upload'],
             ['fullscreen']
         ],
         plugins: {
@@ -55,4 +55,17 @@ $(function () {
     });
 
     $('.alert').delay(5000).fadeOut('slow');
+
+    $('#chooseFile').bind('change', function () {
+        var filename = $("#chooseFile").val();
+        if (/^\s*$/.test(filename)) {
+            $(".file-upload").removeClass('active');
+            $("#noFile").text("No file chosen...");
+        }
+        else {
+            $(".file-upload").addClass('active');
+            $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
+        }
+    });
+
 });

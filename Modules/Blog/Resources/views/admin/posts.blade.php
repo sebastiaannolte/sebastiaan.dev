@@ -5,7 +5,8 @@
     <div class="posts">
         <div class="page-title-block">
             <h1 class="page-title float-left"><a href="/">Posts</a></h1>
-            <a class="new-button" href="/admin/post/new"><i class="fa fa-plus float-right"></i></a>
+            <a class="new-button" href="/admin/post/new"><button class="btn btn--action">Add <i
+                        class="fa fa-plus"></button></i></a>
         </div>
         <table>
             <thead>

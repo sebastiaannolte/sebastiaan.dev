@@ -5,6 +5,7 @@ namespace Modules\Core\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\ImageGallery\Entities\ImageGallery;
 
 class CoreController extends Controller
 {
@@ -33,14 +34,17 @@ class CoreController extends Controller
      */
     public function store(Request $request)
     {
-
-        // $dir = 'public/images';
-        // $path = $request->file('image')->store($dir);
-        // $name = str_replace("$dir/", '', $path);
         $file = $request->file('image');
+        $title = $request->alt;
         $extension = $file->getClientOriginalExtension(); // getting image extension
         $filename = time() . '.' . $extension;
         $file->move('img/', $filename);
+
+        $image = new ImageGallery;
+
+        $image->image = $filename;
+        $image->title = $title;
+        $image->save();
 
 
         $response = [

@@ -5,7 +5,8 @@
     <div class="projects">
         <div class="page-title-block">
             <h1 class="page-title float-left"><a href="/projects">Projects</a></h1>
-            <a class="new-button" href="/admin/project/create"><i class="fa fa-plus float-right"></i></a>
+            <a class="new-button" href="/admin/project/create"><button class="btn btn--action">Add <i
+                        class="fa fa-plus"></button></i></a>
         </div>
         </h1>
         <table>

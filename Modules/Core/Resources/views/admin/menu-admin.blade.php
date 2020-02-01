@@ -19,6 +19,9 @@
                 <li class="sidebar-nav-item {{ request()->is('admin/pages') ? 'active' : '' }}">
                     <a href="/admin/pages">Pages</a>
                 </li>
+                <li class="sidebar-nav-item {{ request()->is('admin/imagegallery') ? 'active' : '' }}">
+                    <a href="/admin/imagegallery">Images</a>
+                </li>
                 <hr class="menu-line">
                 <li class="sidebar-nav-item {{ request()->is('admin/profile') ? 'active' : '' }}">
                     <a href="/admin/profile">Profile</a>
