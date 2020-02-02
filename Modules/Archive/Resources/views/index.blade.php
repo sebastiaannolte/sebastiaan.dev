@@ -1,4 +1,4 @@
-@extends('core::layouts.master-admin')
+@extends('core::layouts.master')
 
 @section('title', 'Archive')
 

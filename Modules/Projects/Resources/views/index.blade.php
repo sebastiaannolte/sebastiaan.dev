@@ -1,4 +1,4 @@
-@extends('core::layouts.master-admin')
+@extends('core::layouts.master')
 
 @section('content')
 <div class="content container">
