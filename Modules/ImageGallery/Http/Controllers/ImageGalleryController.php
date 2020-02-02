@@ -41,7 +41,7 @@ class ImageGalleryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|max:20',
+            'title' => 'required|max:100',
             'image' => 'required|max:2000',
         ]);
 
