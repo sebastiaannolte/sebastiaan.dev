@@ -18,7 +18,7 @@
             <tbody>
                 @foreach ($posts as $post)
                 <tr>
-                    <td><a href="{{getFullUrl($post->id)}}">{{$post->title}}</a></td>
+                    <td><a href="{{getFullUrl($post->id)}}" target="_blanc">{{$post->title}}</a></td>
                     <td>
                         <div class="button-actions">
                             <a href="/admin/post/{{$post->id}}/edit">
